@@ -8,8 +8,11 @@ edition = "2021"
 [dependencies]
 clokwerk = "0.4.0"
 rocket = "0.4.11"
-rocket_dyn_templates = { version = "0.1.0-rc.3", features = ["tera"] }
-serde = "1.0.163"
+serde = { version = "1.0.163", features = ["derive"] }
 serde_json = "1.0.96"
 sqlx = { version = "0.6.3", features = [ "runtime-tokio-rustls" ] }
 tokio = { version = "1.28.2", features = ["full"] }
+
+[dependencies.rocket_contrib]
+version = "0.4.5"
+features = ["handlebars_templates"]
