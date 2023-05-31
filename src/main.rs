@@ -1,10 +1,15 @@
 #![feature(decl_macro)]
 #[macro_use] extern crate rocket;
+#[macro_use] extern crate rocket_contrib;
+use rocket_contrib::databases::diesel;
 use rocket::Request;
 use rocket::response::content::Json;
 use rocket::request::Form;
 use rocket_contrib::templates::Template;
 use serde::Serialize;
+
+#[database("sqlite_logs")]
+struct LogsDbConn(diesel::PgConnection);
 
 #[derive(FromForm, Debug)]
 struct Book {

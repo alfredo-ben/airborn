@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     environment:
-      ROCKET_DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      ROCKET_DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@localhost:5432/${POSTGRES_DB}
 
   db:
     image: postgres:13
